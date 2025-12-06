@@ -13,7 +13,7 @@ fun QuizzyApp() {
     var loggedIn by remember { mutableStateOf(false) }
 
     if (loggedIn) {
-        StudentDashboardScreen()
+        StudentDashboardScreen().DashboardScreen()
     } else {
         LoginScreen(
             onLoginSuccess = { loggedIn = true }

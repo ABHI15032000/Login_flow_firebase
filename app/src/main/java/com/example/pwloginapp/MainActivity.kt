@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.pwloginapp.ui.theme.PwLoginAppTheme
+import com.example.pwloginapp.ui.theme.QuizzyApp
 import com.example.pwloginapp.ui.theme.home.StudentDashboardScreen
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            //QuizzyApp()
+
             QuizzyApp()
 //            PwLoginAppTheme {
 //                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

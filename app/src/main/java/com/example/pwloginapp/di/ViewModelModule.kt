@@ -6,13 +6,11 @@ import com.example.pwloginapp.ui.theme.login.AuthViewModel
 import org.koin.dsl.module
 
 val viewModelModule = module {
-    viewModel {
-        DashBoardViewModel(
-            get()
-        )
-        AuthViewModel(get())
-    }
 
+    viewModel { DashBoardViewModel(get()) }
+
+    viewModel { AuthViewModel(get()) }
 }
+
 
 
