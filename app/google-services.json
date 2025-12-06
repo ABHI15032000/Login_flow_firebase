@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "787181888286",
+    "project_id": "quiz-login-app",
+    "storage_bucket": "quiz-login-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787181888286:android:662eedcde9339ba6645f0f",
+        "android_client_info": {
+          "package_name": "com.example.pwloginapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXtVlYjUf-JdhwC45-HB-6_RUYvfg_f_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
