@@ -1,13 +1,11 @@
-package com.example.pwloginapp.data.auth
 
+
+import com.example.pwloginapp.data.auth.AuthRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.tasks.await
 
-
-class AuthRepositoryImpl(
-    private val firebaseAuth: FirebaseAuth
-) : AuthRepository {
+class AuthRepositoryImpl(private val firebaseAuth: FirebaseAuth) : AuthRepository {
 
     override suspend fun login(email: String, password: String): Result<FirebaseUser?> {
         return try {
@@ -27,7 +25,11 @@ class AuthRepositoryImpl(
         }
     }
 
-    override fun logout() = firebaseAuth.signOut()
+    override fun logout() {
+        firebaseAuth.signOut()
+    }
 
-    override fun currentUser(): FirebaseUser? = firebaseAuth.currentUser
+    override fun currentUser(): FirebaseUser? {
+        return firebaseAuth.currentUser
+    }
 }

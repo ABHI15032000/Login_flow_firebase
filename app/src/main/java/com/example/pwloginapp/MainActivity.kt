@@ -1,19 +1,16 @@
 package com.example.pwloginapp
 
+import LoginScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.pwloginapp.ui.theme.PwLoginAppTheme
-import com.example.pwloginapp.ui.theme.QuizzyApp
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import com.example.pwloginapp.ui.theme.home.StudentDashboardScreen
+import com.example.pwloginapp.ui.theme.login.RegistrationScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,13 +18,34 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
-            QuizzyApp()
-//            PwLoginAppTheme {
-//                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-//                    StudentDashboardScreen().DashboardScreen()
-//                }
-//            }
+            var isLoggedIn by rememberSaveable { mutableStateOf(false) }
+            var showRegister by rememberSaveable { mutableStateOf(false) }
+
+            when {
+                isLoggedIn -> {
+                    StudentDashboardScreen().DashboardScreen()
+                }
+
+                showRegister -> {
+                    RegistrationScreen(
+                        onRegisterSuccess = {
+                            showRegister = false   // Go to login screen automatically
+                        },
+                        onBackToLogin = {
+                            showRegister = false
+                        }
+                    )
+                }
+
+                else -> {
+                    LoginScreen(
+                        onLoginSuccess = { isLoggedIn = true },
+                        onRegisterClick = { showRegister = true }
+                    )
+                }
+            }
         }
     }
 }
+
 

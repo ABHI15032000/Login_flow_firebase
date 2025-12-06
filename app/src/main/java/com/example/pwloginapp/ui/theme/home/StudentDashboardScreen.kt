@@ -82,7 +82,7 @@ class StudentDashboardScreen {
             // 2. If true, show the second screen
             NotificationScreen(
                 onBackClick = { showNotificationsSettings = false }, // Back button sets state back to false
-                onLogoutClick = { /* Handle logout */ }
+                onLogoutClick = {  }
             )
         }else{
             when (state) {
