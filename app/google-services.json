@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "658544500312",
+    "project_id": "login-flow-app-1434b",
+    "storage_bucket": "login-flow-app-1434b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658544500312:android:4c893fd6cd76ed5bf4742d",
+        "android_client_info": {
+          "package_name": "com.example.pwloginapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmaThNSViaKeYcB26vjqHThtxC4EYExyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
