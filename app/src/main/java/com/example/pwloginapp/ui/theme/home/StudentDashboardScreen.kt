@@ -73,7 +73,8 @@ class StudentDashboardScreen {
     private val PurplePrimary = Color(0xFF673AB7)
 
     @Composable
-    fun DashboardScreen(viewModel: DashBoardViewModel = koinViewModel()) {
+    fun DashboardScreen(viewModel: DashBoardViewModel = koinViewModel(),
+                        onLogout: () -> Unit) {
         val state by viewModel.uiState.collectAsState()
 
         var showNotificationsSettings by rememberSaveable { mutableStateOf(false) }

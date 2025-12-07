@@ -1,3 +1,4 @@
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -21,9 +22,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pwloginapp.R
 import com.example.pwloginapp.ui.theme.login.AuthViewModel
 import org.koin.androidx.compose.koinViewModel
 
@@ -44,6 +47,13 @@ fun LoginScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
+            Text(
+                "Welcome to Quizzy!",
+                color = Color.White,
+                fontSize = 30.sp, // Slightly larger font size
+                fontWeight = FontWeight.ExtraBold
+            )
+
             Box(
                 modifier = Modifier
                     .weight(1f)

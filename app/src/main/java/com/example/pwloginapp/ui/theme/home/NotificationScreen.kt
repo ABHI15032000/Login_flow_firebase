@@ -29,9 +29,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -61,7 +58,6 @@ fun NotificationScreen(
             )
         }
     ) { paddingValues ->
-        // Using LazyColumn for efficient scrolling and list rendering
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -72,26 +68,25 @@ fun NotificationScreen(
                 SectionHeader("Notifications")
             }
 
-            // Notification Items (using hardcoded data for demonstration)
             item {
                 NotificationItem(
                     title = "Missed quiz in physics yesterday",
                     time = "2 hours ago",
-                    backgroundColor = Color(0xFFFFDDBB) // Light Orange
+                    backgroundColor = Color(0xFFFFDDBB)
                 )
             }
             item {
                 NotificationItem(
                     title = "Badge earned",
                     time = "8 hours ago",
-                    backgroundColor = Color(0xFFE4CFFF) // Light Purple
+                    backgroundColor = Color(0xFFE4CFFF)
                 )
             }
             item {
                 NotificationItem(
                     title = "Teacher Note",
                     time = "1 day ago",
-                    backgroundColor = Color(0xFFC8F6CD) // Light Green
+                    backgroundColor = Color(0xFFC8F6CD)
                 )
             }
 
@@ -101,13 +96,12 @@ fun NotificationScreen(
                 SectionHeader("Settings")
             }
 
-            // Setting Items
             item {
                 SettingItem(
                     icon = Icons.Outlined.Person,
                     title = "Switch Child",
                     subtitle = "Change active child profile",
-                    onClick = { /* Handle Switch Child navigation/logic */ }
+                    onClick = { }
                 )
             }
             item {
@@ -115,7 +109,7 @@ fun NotificationScreen(
                     icon = Icons.Outlined.Warning,
                     title = "Language",
                     subtitle = "English",
-                    onClick = { /* Handle Language selection dialog/screen */ }
+                    onClick = { }
                 )
             }
             item {
@@ -124,7 +118,7 @@ fun NotificationScreen(
                     title = "Logout",
                     subtitle = "Sign out of your account",
                     onClick = { viewModel.logout()
-                        onLogoutClick()}// Trigger the lambda passed from the parent
+                        onLogoutClick()}
                 )
             }
 

@@ -23,7 +23,8 @@ class MainActivity : ComponentActivity() {
 
             when {
                 isLoggedIn -> {
-                    StudentDashboardScreen().DashboardScreen()
+                    StudentDashboardScreen().DashboardScreen(onLogout = { isLoggedIn = false }
+                    )
                 }
 
                 showRegister -> {
